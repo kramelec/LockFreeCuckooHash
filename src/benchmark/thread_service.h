@@ -55,6 +55,7 @@ void* thread_service(void* threadArgs)
     else
       ht_p->remove(k, tid);
   }
+  return ht_p;
 }
 
 template<typename T>
@@ -104,6 +105,7 @@ void* thread_service_low_contention(void* threadArgs)
       ht_p->remove(k, tid);
     }
   }
+  return ht_p;
 }
 
 template<typename T>
@@ -131,6 +133,7 @@ void* thread_service_high_contention(void* threadArgs)
   {
     ht_p->search(0, tid);
   }
+  return ht_p;
 }
 
 template<typename T>
@@ -148,6 +151,7 @@ void* thread_insert(void* threadArgs)
     ht_p->insert(elems[i], elems[i], tid);
   }
   
+  return ht_p;
 }
 
 template<typename T>
@@ -173,6 +177,7 @@ void* thread_remove(void* threadArgs)
       ht_p->search(elems[rng(mt)], tid);
   }
 
+  return ht_p;
 }
 
 #endif
